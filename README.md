@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📱 YMix Frontend
+# 📱 YMIX_MesClient
 
 **Flutter-клиент мессенджера YMix**
 
@@ -12,8 +12,8 @@ Flutter · Dart · STOMP/WebSocket
 
 ## 📖 О проекте
 
-YMix Frontend — кроссплатформенный клиент на Flutter, работающий в паре
-с бэкендом `messenger-backend`.
+YMIX_MesClient — кроссплатформенный клиент на Flutter, работающий в паре
+с бэкендом `YMIX_MesServer`.
 
 **Возможности:**
 
