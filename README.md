@@ -92,11 +92,6 @@ lib/
 ## 🛠 Стек
 
 - Flutter (Dart), SDK `>=3.3.0 <4.0.0`
-- `http` — REST-запросы
-- `stomp_dart_client` — WebSocket/STOMP
-- `provider` — управление состоянием
-- `shared_preferences` — хранение JWT-сессии
-- `intl` — форматирование дат и времени
 
 ---
 
