@@ -1,84 +1,88 @@
-# Y MIX — Flutter клиент
+<div align="center">
 
-Клиент под ваш Spring Boot бэкенд (`messenger-backend`), реализует:
-JWT-логин/регистрацию, список чатов, поиск пользователей, историю сообщений
-и обмен сообщениями в реальном времени через STOMP/WebSocket.
+# 📱 YMix Frontend
 
-## 1. Как развернуть проект
+**Flutter-клиент мессенджера YMix**
 
-Папка содержит только `lib/` и `pubspec.yaml` — платформенные каталоги
-(`android/`, `ios/`, `web/`) нужно сгенерировать локально командой Flutter,
-т.к. в среде, где я собирал проект, не было Flutter SDK для `flutter create`.
+Flutter · Dart · STOMP/WebSocket
+
+</div>
+
+---
+
+## 📖 О проекте
+
+YMix Frontend — кроссплатформенный клиент на Flutter, работающий в паре
+с бэкендом `messenger-backend`.
+
+**Возможности:**
+
+- 🔐 Авторизация по JWT, сессия сохраняется между запусками
+- 💬 Список чатов и поиск пользователей
+- 📜 История переписки с пагинацией
+- ⚡ Обмен сообщениями в реальном времени через STOMP/WebSocket
+
+---
+
+## 🏗 Архитектура
+
+| Папка | Назначение |
+|---|---|
+| `config/` | адрес бэкенда, тема приложения |
+| `models/` | User, Chat, Message |
+| `services/` | `api_service` (REST), `ws_service` (STOMP/WebSocket), `session` (JWT) |
+| `screens/` | auth, chats, chat, profile, splash |
+| `widgets/` | chat_tile, message_bubble, ymix_logo, blob_background |
+
+`api_service` обращается к REST-эндпоинтам бэкенда, а `ws_service` держит
+STOMP-соединение и подписки для сообщений в реальном времени. JWT из
+`session` подставляется как в REST-запросы, так и в заголовок при STOMP
+CONNECT.
+
+---
+
+## 🛠 Стек
+
+- Flutter (Dart)
+- `http`
+- `stomp_dart_client`
+- `provider`
+- `shared_preferences`
+- `intl`
+
+---
+
+## 🚀 Запуск
+
+Понадобится установленный Flutter SDK и запущенный бэкенд.
+
+**1. Сгенерировать платформенные каталоги**
 
 ```bash
-# 1. Создайте новый flutter-проект рядом (это сгенерирует android/ios/web/etc)
 flutter create ymix_app
 cd ymix_app
+```
 
-# 2. Скопируйте в него присланные lib/ и pubspec.yaml, заменив дефолтные
+**2. Подставить присланные lib/ и pubspec.yaml**
+
+```bash
 rm -rf lib
 cp -r /путь/до/присланного/lib .
 cp /путь/до/присланного/pubspec.yaml .
+```
 
-# 3. Установите зависимости
+**3. Установить зависимости и запустить**
+
+```bash
 flutter pub get
-
-# 4. Запустите
 flutter run
 ```
 
-В `android/app/src/main/AndroidManifest.xml`, сгенерированном `flutter create`,
-добавьте (нужно для доступа к localhost backend по http/ws без TLS):
-```xml
-<uses-permission android:name="android.permission.INTERNET"/>
-<application ... android:usesCleartextTraffic="true">
-```
+**Перед запуском** укажите адрес бэкенда в `lib/config/constants.dart`
+(`apiHost`, `apiPort`):
 
-## 2. Настройка адреса бэкенда
-
-Файл `lib/config/constants.dart`:
-```dart
-static const String apiHost = 'localhost'; // <-- смените
-static const int apiPort = 8080;
-```
-- Android-эмулятор → `10.0.2.2`
-- iOS-симулятор / desktop / web → `localhost`
-- Реальное устройство → IP компьютера в локальной сети, например `192.168.1.50`
-
-## 3. Что реализовано (1:1 с вашим API)
-
-| Экран | Backend endpoint |
+| Платформа | Адрес |
 |---|---|
-| Регистрация | `POST /api/auth/register` |
-| Вход | `POST /api/auth/login` |
-| Список чатов | `GET /api/chats` + WS `/user/queue/chats` |
-| Поиск пользователей / новый чат | `GET /api/users/search`, `POST /api/chats/private` |
-| История переписки | `GET /api/chats/{id}/messages` (пагинация) |
-| Отправка/приём сообщений в реальном времени | STOMP `/app/chat.send`, подписка на `/topic/chat.{id}` |
-| Отметка "прочитано" | `POST /api/chats/{id}/read` |
-| JWT хранится между запусками | `shared_preferences` |
-
-## 4. Что показано в макете, но НЕ поддержано текущим бэкендом
-
-Ваши скриншоты показывают больше UI, чем есть в `messenger-backend`. Я оставил
-эти экраны/элементы как визуальные заглушки (не подключены к API), чтобы вы
-видели полную картину интерфейса, но учтите — их нужно будет реализовать на
-бэкенде отдельно, если они нужны по-настоящему:
-
-- Вход по номеру телефона + одноразовый код (сейчас: логин/пароль, т.к. в
-  `AuthController` есть только `username`/`password`).
-- Поле "телефон"/"почта" при регистрации (в `RegisterRequest` только
-  `username`, `password`, `displayName`).
-- "Избранное" / "Архив" чатов — сейчас это чисто фронтовые фильтры, бэкенд не
-  хранит такие флаги на чате.
-- Голосовые сообщения, фото/видео/файлы в переписке, звонки (иконки есть,
-  функционала нет — в `SendMessageRequest` только текст `content`).
-- Настройки профиля: приватность, уведомления, темы/аватары/фоны — экран
-  профиля есть, но данные нигде не сохраняются (нет соответствующих
-  контроллеров/таблиц).
-- Группы и каналы — в `ChatType`/бэкенде виден задел (`type` в `ChatDto`), но
-  создания групповых чатов в контроллерах нет, поэтому в приложении реализован
-  только приватный (1-на-1) чат.
-
-Если что-то из этого важно — скажите, и я допишу и клиентскую часть, и
-недостающие эндпоинты в Spring Boot бэкенде.
+| Android-эмулятор | `10.0.2.2` |
+| Desktop / iOS-симулятор / web | `localhost` |
+| Реальное устройство | IP компьютера в локальной сети |
