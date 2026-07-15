@@ -49,27 +49,37 @@ Flutter · Dart · STOMP/WebSocket
 ## Скриншоты приложения
 
 <details>
+<summary>🎬 Заставка</summary>
+<img src="screenshots/Anim.png" width="700"/>
+</details>
+
+<details>
 <summary>🔐 Авторизация</summary>
 <img src="screenshots/Auth.png" width="700"/>
+<img src="screenshots/Reg.png" width="700"/>
 </details>
 
 <details>
-<summary>Список чатов</summary>
-<img src="screenshots/Main_Admin.png" width="700"/>
-<img src="screenshots/Eqip.png" width="700"/>
-<img src="screenshots/Aud.png" width="700"/>
-<img src="screenshots/QR.png" width="700"/>
-<img src="screenshots/Rep.png" width="700"/>
+<summary>💬 Список чатов</summary>
+<img src="screenshots/Main.png" width="700"/>
 </details>
 
 <details>
-<summary>Ча</summary>
-<img src="screenshots/Stud.png" width="700"/>
+<summary>✉️ Переписка</summary>
+<img src="screenshots/Chat.png" width="700"/>
+<img src="screenshots/ChatProfile.png" width="700"/>
 </details>
 
 <details>
-<summary>👨‍🏫 Кабинет преподавателя</summary>
-<img src="screenshots/Tech.png" width="700"/>
+<summary>👤 Профиль</summary>
+<img src="screenshots/Profile.png" width="700"/>
+</details>
+
+<details>
+<summary>⚙️ Настройки</summary>
+<img src="screenshots/Settings1.png" width="700"/>
+<img src="screenshots/Settings2.png" width="700"/>
+<img src="screenshots/Settings3.png" width="700"/>
 </details>
 
 
