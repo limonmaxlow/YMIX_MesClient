@@ -45,6 +45,34 @@ Flutter · Dart · STOMP/WebSocket
 | Переписка | `screens/chat/chat_screen.dart` | История сообщений и обмен в реальном времени |
 | Профиль | `screens/profile/profile_screen.dart` | Информация о текущем пользователе |
 
+
+## Скриншоты приложения
+
+<details>
+<summary>🔐 Авторизация</summary>
+<img src="screenshots/Auth.png" width="700"/>
+</details>
+
+<details>
+<summary>Список чатов</summary>
+<img src="screenshots/Main_Admin.png" width="700"/>
+<img src="screenshots/Eqip.png" width="700"/>
+<img src="screenshots/Aud.png" width="700"/>
+<img src="screenshots/QR.png" width="700"/>
+<img src="screenshots/Rep.png" width="700"/>
+</details>
+
+<details>
+<summary>Ча</summary>
+<img src="screenshots/Stud.png" width="700"/>
+</details>
+
+<details>
+<summary>👨‍🏫 Кабинет преподавателя</summary>
+<img src="screenshots/Tech.png" width="700"/>
+</details>
+
+
 ---
 
 ## 🏗 Архитектура
