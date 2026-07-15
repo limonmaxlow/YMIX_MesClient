@@ -13,7 +13,7 @@ Flutter · Dart · STOMP/WebSocket
 ## 📖 О проекте
 
 **YMIX_MesClient** — кроссплатформенный клиент на Flutter, работающий в
-паре с бэкендом [`YMIX_MesServer`](../messenger-backend-README.md).
+паре с бэкендом [`YMIX_MesServer`](https://github.com/limonmaxlow/YMix_MesServer/blob/main/README.md).
 Приложение реализует полноценный сценарий обмена сообщениями: от
 регистрации и входа до переписки в реальном времени.
 
