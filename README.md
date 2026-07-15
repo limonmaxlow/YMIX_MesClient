@@ -50,36 +50,36 @@ Flutter · Dart · STOMP/WebSocket
 
 <details>
 <summary>🎬 Заставка</summary>
-<img src="screenshots/Anim.png" width="700"/>
+<img src="screenshots/Anim.png" width="220"/>
 </details>
 
 <details>
 <summary>🔐 Авторизация</summary>
-<img src="screenshots/Auth.png" width="700"/>
-<img src="screenshots/Reg.png" width="700"/>
+<img src="screenshots/Auth.png" width="220"/>
+<img src="screenshots/Reg.png" width="220"/>
 </details>
 
 <details>
 <summary>💬 Список чатов</summary>
-<img src="screenshots/Main.png" width="700"/>
+<img src="screenshots/Main.png" width="220"/>
 </details>
 
 <details>
 <summary>✉️ Переписка</summary>
-<img src="screenshots/Chat.png" width="700"/>
-<img src="screenshots/ChatProfile.png" width="700"/>
+<img src="screenshots/Chat.png" width="220"/>
+<img src="screenshots/ChatProfile.png" width="220"/>
 </details>
 
 <details>
 <summary>👤 Профиль</summary>
-<img src="screenshots/Profile.png" width="700"/>
+<img src="screenshots/Profile.png" width="220"/>
 </details>
 
 <details>
 <summary>⚙️ Настройки</summary>
-<img src="screenshots/Settings1.png" width="700"/>
-<img src="screenshots/Settings2.png" width="700"/>
-<img src="screenshots/Settings3.png" width="700"/>
+<img src="screenshots/Settings1.png" width="220"/>
+<img src="screenshots/Settings2.png" width="220"/>
+<img src="screenshots/Settings3.png" width="220"/>
 </details>
 
 
